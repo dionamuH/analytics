@@ -22525,69 +22525,88 @@
     </style>
     
     <style>
-        /* Combined CSS from all notebooks */
-        
-        /* Notebook 1 CSS */
-        body { background-color: #f0f0f0; }
-        .notebook-class { color: blue; }
+      /* Include the CSS code here or link to an external stylesheet */
+      body { 
+          background-color: #f0f0f0; 
+          font-family: Arial, sans-serif;
+      }
 
-        /* Notebook 2 CSS */
-        /* Add notebook 2 styles here */
+      .notebook-class { 
+          color: blue; 
+      }
 
-        /* Notebook 3 CSS */
-        /* Add notebook 3 styles here */
+      /* Navigation Styling */
+      #navigation {
+          display: flex;
+          flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+          justify-content: center;
+          margin: 20px 0;
+      }
 
-        /* Navigation Styling */
-        #navigation {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
+      #navigation button {
+          background-color: #4CAF50; /* Green */
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          font-size: 16px;
+          margin: 4px;
+          transition-duration: 0.4s;
+          cursor: pointer;
+          border-radius: 12px;
+          flex: 1 1 200px; /* Flex properties for responsive resizing */
+          box-sizing: border-box;
+      }
 
-        #navigation button {
-            background-color: #4CAF50; /* Green */
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            transition-duration: 0.4s;
-            cursor: pointer;
-            border-radius: 12px;
-        }
+      #navigation button:hover {
+          background-color: grey;
+          color: black;
+          border: 2px solid grey;
+      }
 
-        #navigation button:hover {
-            background-color: grey;
-            color: black;
-            border: 2px solid grey;
-        }
+      #navigation button:active {
+          background-color: #45a049;
+          color: white;
+          border: 2px solid #45a049;
+      }
 
-        #navigation button:active {
-            background-color: #45a049;
-            color: white;
-            border: 2px solid #45a049;
-        }
+      /* Make the <a> tag behave like a block element to fit the button style */
+      .navigation a {
+          text-decoration: none; /* Remove underline from links */
+          display: inline-block;
+          margin: 4px;
+          flex: 1 1 200px; /* Flex properties for responsive resizing */
+          box-sizing: border-box;
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          font-size: 16px;
+          border-radius: 12px;
+      }
 
-        /* Page Styling */
-        .page {
-            display: none;
-            padding: 20px;
-        }
+      /* Page Styling */
+      .page {
+          display: none;
+          padding: 20px;
+      }
 
-        .page.active {
-            display: block;
-        }
-    </style>
+      .page.active {
+          display: block;
+      }
+  </style>
 </head>
 <body>
     <div id="navigation">
-        <button onclick="showPage(1)">Brain stroke analysis</button>
-        <button onclick="showPage(2)">Eko Apartments Analysis</button>
-        <button onclick="showPage(3)">Lagos Used Cars Analysis</button>
-    </div>
+      <button onclick="showPage(1)">Brain stroke analysis</button>
+      <button onclick="showPage(2)">Eko Apartments Analysis</button>
+      <button onclick="showPage(3)">Lagos Used Cars Analysis</button>
+      <a href="https://dionamuh.github.io/stock_time-series/" target="_blank">
+        <button>Forecasting Analysis</button>
+    </a>
+  </div>
     
     <div id="page1" class="page active">
         <main>
@@ -25040,17 +25059,16 @@
             
     </div>
 
+    
+
     <script>
-        function showPage(pageNumber) {
-            const pages = document.querySelectorAll('.page');
-            pages.forEach((page, index) => {
-                if (index === pageNumber - 1) {
-                    page.classList.add('active');
-                } else {
-                    page.classList.remove('active');
-                }
-            });
-        }
-    </script>
+      function showPage(pageNumber) {
+          var pages = document.querySelectorAll('.page');
+          pages.forEach(function(page) {
+              page.classList.remove('active');
+          });
+          pages[pageNumber - 1].classList.add('active');
+      }
+  </script>
 </body>
 </html>
